@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Parallax Scrolling Website - MboyCode</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+            /* width */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+                background: #f1f1;
+            }
+
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+                background: #1c0552;
+            }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: rgb(124, 4, 172);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">MboyCode</a>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="stars.png" id="stars">
+            <img src="moon.png" id="moon">
+            <img src="mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Moon Light</h2>
+            <a href="#sec" id="btn">Explore</a>
+            <img src="mountains_front.png" id="mountains_front">
+        </section>
+        <div class="sec" id="sec">
+            <h2>Parallax Scrolling Effects</h2>
+            <p>Parallax scrolling is a web site trend where the background content (i.e. an image) is moved at a different speed than the foreground content while scrolling. Click on the links below to see the difference between a website with and without parallax scrolling.</p>
+            <button><a href="https://www.w3schools.com/howto/howto_css_parallax.asp#:~:text=Parallax%20scrolling%20is%20a%20web,the%20foreground%20content%20while%20scrolling." class="link" target="_blank">Click Here</a></button>
+            <br>
+            <br>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi harum, ipsa voluptatum, vero rem error reprehenderit eligendi temporibus dolorem voluptate necessitatibus labore fugiat soluta, quibusdam et amet vitae facilis placeat?. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vitae dolorem id provident dignissimos sed cupiditate inventore, quibusdam accusamus asperiores ipsam. Debitis, nostrum! Quasi delectus deserunt blanditiis repellat ea quas.<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, consequuntur! Id necessitatibus at maxime nisi cupiditate earum quos natus pariatur aut cum, vel repudiandae dolor impedit ipsa voluptate quibusdam sequi.<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero eveniet nisi commodi voluptate adipisci eaque saepe voluptatem sequi totam atque culpa autem nesciunt enim magni quidem, iure excepturi mollitia voluptates!. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa hic minus dolore dicta nihil obcaecati sapiente illo aperiam nostrum? At labore incidunt beatae blanditiis nisi dolorem ea totam vel iure.<br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit eius iste accusantium! Numquam voluptatibus omnis perferendis pariatur eveniet voluptates possimus dolore ea, assumenda incidunt esse accusantium vero nostrum natus nisi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis earum est, blanditiis, velit ea incidunt quisquam veritatis molestias aliquam quam iste deserunt labore eveniet tempora consequuntur minus nihil quis debitis!<br></p>
+        </div>
+
+        <script>
+            let stars = document.getElementById('stars'); 
+            let moon = document.getElementById('moon'); 
+            let mountains_behind = document.getElementById('mountains_behind'); 
+            let text = document.getElementById('text'); 
+            let btn = document.getElementById('btn'); 
+            let mountains_front = document.getElementById('mountains_front');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_behind.style.top = value * 0.5 + 'px';
+                mountains_front.style.top = value * 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                text.style.marginTop = value * 1.5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                header.style.top = value * 0.5 + 'px';
+            })
+        </script>
+    </body>
+</html>
